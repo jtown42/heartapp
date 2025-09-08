@@ -1,0 +1,180 @@
+/* ========= THEME VARIABLES ========= */
+/* LIGHT (default) */
+:root{
+  --bg:#f8fafc;          /* page background */
+  --text:#0f172a;        /* main text */
+  --panel:#ffffff;       /* cards/panels/chat bubbles base */
+  --line:#d9dde3;        /* borders */
+  --muted:#6b7280;       /* helper text */
+  --chip:#f1f5f9;        /* subtle tag background */
+  --btn-bg:#ffffff;      /* default button bg */
+  --btn-text:#0f172a;    /* default button text */
+}
+
+/* DARK */
+:root[data-theme="dark"]{
+  --bg:#0b1220;
+  --text:#e5e7eb;
+  --panel:#0f172a;
+  --line:#1f2937;
+  --muted:#94a3b8;
+  --chip:#111827;
+  --btn-bg:#0f172a;
+  --btn-text:#e5e7eb;
+}
+
+/* ========= BASE ========= */
+*{box-sizing:border-box}
+html,body{
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  margin:0;
+  font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+}
+h1,h2{margin:.2rem 0 .6rem}
+h1{font-size:1.8rem;font-weight:800}
+h2.h{font-size:1.05rem;font-weight:700}
+
+.topbar{
+  position:sticky; top:0; z-index:10;
+  background:var(--panel);
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:.8rem 1rem;
+}
+.controls{display:flex; gap:.5rem; align-items:center}
+
+main.grid{
+  display:grid; grid-template-columns:1fr 1fr; gap:1rem; padding:1rem;
+}
+@media (max-width:960px){ main.grid{grid-template-columns:1fr} }
+
+.panel{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:1rem;
+}
+.muted{color:var(--muted)}
+code{background:var(--chip); padding:.1rem .35rem; border-radius:6px}
+
+/* ========= DETAILS / CATALOG ========= */
+details{
+  border:1px solid var(--line);
+  border-radius:10px;
+  margin:.6rem 0;
+  background:var(--panel);
+}
+summary{
+  cursor:pointer; user-select:none;
+  padding:.7rem .9rem; display:flex; align-items:center; justify-content:space-between;
+  border-bottom:1px solid var(--line);
+  list-style:none;
+}
+summary::-webkit-details-marker{display:none}
+.list{list-style:none; margin:0; padding:.6rem}
+.item{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:.75rem;
+  padding:.6rem .7rem;
+  border:1px solid var(--line);
+  border-radius:10px;
+  margin:.45rem 0;
+  background:var(--panel);
+}
+.item .meta{font-size:.95rem}
+.item .buzz{color:var(--muted); font-size:.9rem; margin-top:.15rem}
+
+/* ========= BUTTONS ========= */
+button{
+  background:var(--btn-bg);
+  color:var(--btn-text);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:.45rem .7rem;
+  cursor:pointer;
+}
+button:hover{filter:brightness(0.98)}
+button:active{transform:translateY(1px)}
+button.ghost{opacity:.95}
+button.ghost:hover{opacity:1}
+
+/* RED PRIMARY BUTTONS */
+.btn-primary{
+  background:#ef4444;     /* red-500 */
+  color:#fff;
+  border-color:#ef4444;
+  box-shadow:0 1px 0 rgba(0,0,0,.05);
+}
+.btn-primary:hover{ background:#dc2626; border-color:#dc2626; }
+.btn-primary:active{ transform:translateY(1px); }
+.btn-primary:focus{ outline:2px solid transparent; box-shadow:0 0 0 3px rgba(239,68,68,.35); }
+:root[data-theme="dark"] .btn-primary{
+  background:#ef4444; border-color:#ef4444; color:#fff;
+}
+
+/* ========= CHIPS ========= */
+.tag{
+  display:inline-flex; align-items:center; gap:.4rem;
+  background:var(--chip);
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:.15rem .6rem;
+  font-size:.85rem;
+}
+
+/* ========= CHAT (case page) ========= */
+.chat{
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:10px;
+  height:360px;
+  overflow:auto;
+  background:var(--panel);
+}
+.msg{
+  max-width:92%;
+  margin:.4rem 0;
+  padding:.5rem .7rem;
+  border:1px solid var(--line);
+  border-radius:10px;
+  white-space:pre-wrap;
+  background:var(--panel);
+}
+.msg.assistant{opacity:.98}
+.msg.user{background:#0ea5e9; color:#fff; border-color:#0284c7; margin-left:auto}
+
+/* ========= FORMS ========= */
+.ai-form input[type="text"]{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:.55rem .7rem;
+  background:var(--panel);
+  color:var(--text);
+}
+.ai-form input[type="text"]::placeholder{color:var(--muted)}
+/* Kill the extra gap at the top of the "More info" dropdown */
+.chat details { margin-top: .15rem; }
+.chat details > summary { margin: 0; cursor: pointer; font-weight: 600; }
+.chat details > summary::-webkit-details-marker { display: none; }
+
+/* Collapse the space above the inner box */
+.chat details .more { 
+  margin-top: 0 !important;   /* override any inline margin-top */
+  padding-top: 0;
+  line-height: 1.22;
+}
+
+/* Trim top margin of the first row inside the box */
+.chat details .more > :first-child { margin-top: 0 !important; }
+
+/* Keep the rest compact */
+.chat details .more > div { margin: 2px 0; }
+.chat details .more ul { margin: 4px 0 4px 1rem; padding-left: 1rem; }
+.chat details .more li { margin: 0; }
+
+/* Optional: subtle left border when open */
+.chat details[open] .more { border-left: 3px solid var(--border, #e5e7eb); padding-left: .5rem; }
+:root.dark .chat details[open] .more { border-left-color: var(--border-dark, #374151); }

@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "id": "normal",
+      "cat": "extra",
+      "title": "Normal heart sounds",
+      "buzz": ["Normal S1/S2", "No extra sounds or murmurs"],
+      "teach": "Anchor S1 at the apex (mitral closure) and S2 at the base (A2 then P2). Start every exam by finding S1/S2 first.",
+      "file": "static/sounds/adult-case-1-normal.mp3"
+    },
+    {
+      "id": "innocent",
+      "cat": "extra",
+      "title": "Innocent/functional murmur",
+      "buzz": ["Soft early systolic", "No radiation", "Decreases standing/Valsalva"],
+      "teach": "Benign in young/healthy; early systolic, short, non-radiating. Normal S2 splitting and pulses.",
+      "file": "static/sounds/adult-case-2-benign-murmur.mp3"
+    },
+    {
+      "id": "ms",
+      "cat": "diastolic",
+      "title": "Mitral stenosis",
+      "buzz": ["Opening snap after S2", "Low-pitched diastolic rumble", "Best at apex (bell)", "Short A2–OS interval = severe"],
+      "teach": "Left lateral decubitus with bell at apex. Rheumatic disease classic. The shorter the A2→OS interval, the more severe.",
+      "file": "static/sounds/adult-case-3-mitral-stenosis.mp3"
+    },
+    {
+      "id": "bicuspid-as-ar",
+      "cat": "systolic",
+      "title": "Bicuspid aortic valve (AS ± AR)",
+      "buzz": ["Harsh crescendo–decrescendo at RUSB", "Radiates to carotids", "± Early diastolic decrescendo (AR)", "Wide pulse pressure if AR"],
+      "teach": "AS: RUSB with carotid radiation; parvus et tardus possible. If AR present: blowing early diastolic at LSB, bounding pulses/wide PP.",
+      "file": "static/sounds/adult-case-4-aortic-stenosis-with-regurg.mp3"
+    },
+    {
+      "id": "vsd",
+      "cat": "congenital",
+      "title": "Ventricular septal defect",
+      "buzz": ["Harsh holosystolic at LLSB", "↑ with handgrip (↑ afterload)", "Smaller defect → louder"],
+      "teach": "Pan-systolic at LLSB. Handgrip increases systemic resistance → louder L→R shunt murmur.",
+      "file": "static/sounds/adult-case-5-VSD.mp3"
+    },
+    {
+      "id": "mr-mvp",
+      "cat": "systolic",
+      "title": "Mitral regurgitation with MVP",
+      "buzz": ["Mid-systolic click (MVP)", "Late systolic murmur", "MR: holosystolic blowing to axilla"],
+      "teach": "MVP click earlier/louder with Valsalva/standing (↓ preload); later/softer with squatting. MR classically radiates to axilla.",
+      "file": "static/sounds/adult-case-6-mitral-regurg-and-mitral-prolapse.mp3"
+    },
+    {
+      "id": "pda",
+      "cat": "congenital",
+      "title": "Patent ductus arteriosus",
+      "buzz": ["Continuous ‘machine-like’", "Best left infraclavicular", "Bounding pulses, wide pulse pressure"],
+      "teach": "Continuous through systole and diastole. Associations: prematurity, congenital rubella. Indomethacin closes (unless kept open intentionally).",
+      "file": "static/sounds/adult-case-7-patent-ductus-arteriosus.mp3"
+    }
+  ]
+}

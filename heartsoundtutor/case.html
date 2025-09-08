@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HeartSound Tutor — Case</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <h1 id="case-title">Guided Case</h1>
+    <div class="controls">
+      <a href="/" style="text-decoration:none"><button>← Back to catalog</button></a>
+      <button id="btn-next" class="btn-primary">Next random</button>
+      <button id="btn-hint" class="ghost" aria-pressed="false">Hint</button>
+      <button id="btn-reveal" class="btn-primary">Reveal answer</button>
+      <button id="btn-theme" class="ghost" aria-pressed="false">🌙 Dark</button>
+    </div>
+  </header>
+
+  <main class="grid">
+    <!-- Single-panel chat (also used as MCQ area) -->
+    <section class="panel" style="grid-column: 1 / -1;">
+      <div id="chat" class="chat"></div>
+      <!-- Chat form stays for LIVE mode; we hide it in MOCK mode automatically -->
+      <form id="chat-form" class="ai-form" style="margin-top:.5rem;display:flex;gap:.5rem">
+        <input id="chat-input" type="text" placeholder="Type your answer or 'hint' (Enter to send)" autocomplete="off" required style="flex:1">
+        <button type="submit" class="btn-primary">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/theme.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='js/case.js') }}" defer></script>
+</body>
+</html>

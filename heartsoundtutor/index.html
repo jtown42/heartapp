@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HeartSound Tutor — Catalog</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <h1>HeartSound Tutor</h1>
+    <div class="controls">
+      <button id="btn-theme" class="ghost" aria-pressed="false">🌙 Dark</button>
+      <button id="btn-random" class="btn-primary">Random Case</button>
+      <label><input type="checkbox" id="chk-filter" checked> limit to checked categories</label>
+    </div>
+  </header>
+
+  <main class="grid">
+    <!-- LEFT: instructions -->
+    <section class="panel">
+      <h2 class="h">How it works</h2>
+      <p class="muted">
+        Pick a murmur from the catalog (or use Random). We’ll take you to a guided case with
+        a clip, questions, and board-style teaching points.
+      </p>
+      <p><strong>Tip:</strong> add your audio files to <code>static/sounds/</code> and make sure filenames match <code>static/data/murmurs.json</code>.</p>
+    </section>
+
+    <!-- RIGHT: catalog -->
+    <section class="panel">
+      <h2 class="h">Catalog</h2>
+
+      <details>
+        <summary>
+          <span>Systolic murmurs</span>
+          <label class="tag"><input class="cat-check" data-cat="systolic" type="checkbox" checked> include in Random</label>
+        </summary>
+        <ul id="list-systolic" class="list"></ul>
+      </details>
+
+      <details>
+        <summary>
+          <span>Diastolic murmurs</span>
+          <label class="tag"><input class="cat-check" data-cat="diastolic" type="checkbox" checked> include in Random</label>
+        </summary>
+        <ul id="list-diastolic" class="list"></ul>
+      </details>
+
+      <details>
+        <summary>
+          <span>Congenital / others</span>
+          <label class="tag"><input class="cat-check" data-cat="congenital" type="checkbox" checked> include in Random</label>
+        </summary>
+        <ul id="list-congenital" class="list"></ul>
+      </details>
+
+      <details>
+        <summary>
+          <span>Extra sounds</span>
+          <label class="tag"><input class="cat-check" data-cat="extra" type="checkbox" checked> include in Random</label>
+        </summary>
+        <ul id="list-extra" class="list"></ul>
+      </details>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/theme.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='js/catalog.js') }}" defer></script>
+</body>
+</html>
